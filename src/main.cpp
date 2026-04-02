@@ -3,8 +3,8 @@
 
 #define PWM_CHANNEL 0
 #define PWM_PIN 4
-#define PWM_FREQ 150000 // 150 kHz -- schimbare la 6.7 microsecunde ca sa fie mai mic decat durata alarmei (10 microsecunde)
-#define PWM_RES 8     // 0-255 -- ca sa fie nevoie de mai putin de 40Mhz/150khz pasi
+#define PWM_FREQ 100000 // 100 kHz -- 1khz esantionat in 100 de puncte = 100 khz - exact la alarma de 10 us a timerului
+#define PWM_RES 8     // 0-255 -- ca sa fie nevoie de mai putin de 40Mhz/100khz pasi
 
 
 
