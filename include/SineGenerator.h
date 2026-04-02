@@ -3,6 +3,6 @@
 
 #include <Arduino.h>
 
-void generateSineWave(uint8_t pin, uint32_t frequency, uint8_t resolution, uint8_t channel = 0);
+bool generateSineWave(uint8_t pin, uint32_t frequency, uint8_t resolution, uint8_t channel = 0);
 
 #endif

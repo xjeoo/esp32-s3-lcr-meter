@@ -14,8 +14,11 @@ void setup()
   while(!Serial) delay(10);
   Serial.println("-Serial initialized");
 
-  generateSineWave(PWM_PIN, PWM_FREQ, PWM_RES, PWM_CHANNEL);
-  Serial.println("-PWM generation started on pin " + String(PWM_PIN) + " with frequency " + String(PWM_FREQ) + " Hz and resolution " + String(PWM_RES) + " bits");
+  if (generateSineWave(PWM_PIN, PWM_FREQ, PWM_RES, PWM_CHANNEL)) {
+    Serial.println("-PWM generation started on pin " + String(PWM_PIN) + " with frequency " + String(PWM_FREQ) + " Hz and resolution " + String(PWM_RES) + " bits");
+  } else {
+    Serial.println("-ERROR: Failed to generate sine wave");
+}
 }
 
 void loop()

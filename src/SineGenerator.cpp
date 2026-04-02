@@ -22,8 +22,30 @@ void IRAM_ATTR onTimer(){
   }
 }
 
-void generateSineWave(uint8_t pin, uint32_t freq, uint8_t resolution, uint8_t channel) {
+bool generateSineWave(uint8_t pin, uint32_t freq, uint8_t resolution, uint8_t channel) {
   
+
+  // input validation starting
+
+  if (resolution < 1 || resolution > 16) {
+    return false;
+  }
+  
+  // ESP32-S3 low-speed LEDC uses 40 MHz XTAL clock
+  // Max frequency = clock_freq / (2^resolution)
+  const uint32_t LEDC_CLOCK_FREQ = 40000000;
+  uint32_t maxFreq = LEDC_CLOCK_FREQ / (1 << resolution);
+  
+  if (freq > maxFreq) {
+    return false;
+  }
+  
+  if (freq == 0) {
+    return false;
+  }
+  
+  // input validation ending
+
   activePwmChannel = channel;
 
   for (int i = 0; i < SAMPLES; i++) {
@@ -51,4 +73,5 @@ void generateSineWave(uint8_t pin, uint32_t freq, uint8_t resolution, uint8_t ch
   timerAlarmWrite(timer, 10, true);
   timerAlarmEnable(timer);
   
+  return true;
 }
