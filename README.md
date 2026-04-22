@@ -7,7 +7,7 @@ Currently a work in progress
 ## Current progress
 - Set up the PWM signal to work with the measurement circuit.
 - Built a working hardware prototype for testing.
-- Set up ADC sampling of Vin and Vout signals with Teleplot vizualization support.
+- Set up ADC sampling of Vin and Vout signals with Teleplot visualisation support.
 
 
 ## Next steps
