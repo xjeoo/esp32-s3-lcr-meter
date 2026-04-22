@@ -50,7 +50,7 @@ bool generateSineWave(uint8_t pin, uint32_t freq, uint8_t resolution, uint8_t ch
 
   for (int i = 0; i < SAMPLES; i++) {
     float angle = (2.0 * PI * i) / SAMPLES;  // [0, 2*PI] normat la sample ca sa fie intre 0-255
-    sinTable[i] = (int)(127.5 + 127.5 * sin(angle));
+    sinTable[i] = (int)(127.5 + 90 * sin(angle)); // intre 20% - 80% [51,204] amplitudine sinus
   }
 
   ledcSetup(channel, freq, resolution);

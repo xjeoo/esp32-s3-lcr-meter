@@ -7,10 +7,11 @@ Currently a work in progress
 ## Current progress
 - Set up the PWM signal to work with the measurement circuit.
 - Built a working hardware prototype for testing.
+- Set up ADC sampling of Vin and Vout signals with Teleplot vizualization support.
+
 
 ## Next steps
-- Implement ADC sampling and signal processing.
-- Calibrate measurement logic for different component ranges.
+- Implement calculations for phase, impedance and DUT values.
 - Show the results on a small display.
 
 ## Tools used
